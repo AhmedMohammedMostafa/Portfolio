@@ -1,5 +1,14 @@
-import '@/styles/globals.css'
+import React from 'react';
+import { DefaultSeo } from 'next-seo';
+import SEOConfig from '../next-seo.config';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <DefaultSeo {...SEOConfig} />
+      <Component {...pageProps} />
+    </>
+  );
 }
+
+export default MyApp;
